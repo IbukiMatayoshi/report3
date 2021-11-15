@@ -31,6 +31,7 @@ public class Enemy {
     /**
      * Heroへ攻撃するメソッド。
      * attackに応じて乱数でダメージを算出し、hero.wounded()によりダメージ処理を実行。
+     * 攻撃する前に自身が死んでいるのなら、攻撃力を０にする。
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
@@ -56,34 +57,66 @@ public class Enemy {
         }
     }
 
+    /**
+     * 自身の名前を設定するメソッド。
+     * @param _name　変更後の名前。
+     */
     public void setName(String _name){
         this.name = _name;
     }
 
+    /**
+     * 自身のHPを設定するメソッド。
+     * @param _hitPoint 変更後のHP。
+     */
     public void setHitPoint(int _hitPoint){
         this.hitPoint = _hitPoint;
     }
 
+    /**
+     * 自身の攻撃力を設定するメソッド。
+     * @param _attack　変更後の攻撃力。
+     */
     public void setAttack(int _attack){
         this.attack = _attack;
     }
 
+    /**
+     * 自身の生死状態を設定するメソッド。true=死亡。
+     * @param _dead　変更後の生死状態。
+     */
     public void setDead(boolean _dead){
         this.dead = _dead;
     }
 
+    /**
+     * 自身の名前を参照するメソッド。
+     * @return　自身の名前。
+     */
     public String getName(){
         return this.name;
     }
 
+    /**
+     * 自身のHPを参照するメソッド。
+     * @return　自身のHP。
+     */
     public int getHitPoint(){
         return this.hitPoint;
     }
 
+    /**
+     * 自身の攻撃力を参照するメソッド。
+     * @return　自身の攻撃力。
+     */
     public int getAttack(){
         return this.attack;
     }
 
+    /**
+     * 自身の生死状態を参照するメソッド。
+     * @return　自身の生死状態。
+     */
     public boolean getDead(){
         return this.dead;
     }
