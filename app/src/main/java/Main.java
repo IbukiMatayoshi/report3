@@ -2,20 +2,20 @@ import jp.ac.uryukyu.ie.e215712.*;
 
 public class Main {
     public static void main(String[] args){
-        Hero hero = new Hero("勇者", 10, 5);
+        Warrior warrior = new Warrior("勇者", 10, 6);
         Enemy enemy = new Enemy("スライム", 6, 3);
 
-        String heroName = hero.getName();
+        String heroName = warrior.getName();
         String enemyName = enemy.getName();
 
         System.out.printf("%s vs. %s\n", heroName, enemyName);
 
         int turn = 0;
-        while( hero.isDead() == false && enemy.isDead() == false ){
+        while( warrior.isDead() == false && enemy.isDead() == false ){
             turn++;
             System.out.printf("%dターン目開始！\n", turn);
-            hero.attack(enemy);
-            enemy.attack(hero);
+            warrior.attackWithWeaponSkill(enemy);
+            enemy.attack(warrior);
         }
         System.out.println("戦闘終了");
     }
